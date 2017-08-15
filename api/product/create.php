@@ -7,6 +7,8 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
+date_default_timezone_set("Asia/Kolkata");
+
 //get database connection and product object
 include_once("../config/database.php");
 include_once("../objects/product.php");
@@ -29,11 +31,11 @@ $product->created = date('d-m-Y H:i:s');
 //lets create product now
 if($product->create()) {
     echo json_encode(
-        array("message"=>"Product was created.");
+        array("message"=>"Product was created.")
     );
 } else { // if unable to create product, notify user
     echo json_encode(
-        array("message"=>"Unable to create product.");
+        array("message"=>"Unable to create product.")
     );
 }
 

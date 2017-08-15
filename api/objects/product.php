@@ -41,8 +41,8 @@ class Product {
 
     //create product
     public function create() {
-        $query = "INSERT INTO"
-                .$this->table_name."
+        $query = "INSERT INTO "
+                .$this->table_name. "
                 SET name=:name, price=:price, description=:description, category_id=:category_id, created=:created";
 
         //prepare query
@@ -66,6 +66,7 @@ class Product {
         if($stmt->execute()) {
             return true;
         } else {
+
             return false;
         }
     }
