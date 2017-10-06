@@ -1,4 +1,5 @@
 window.CreateProductComponent = React.createClass({
+    
     getInitialState: function() {
         return {
             categories: [],
