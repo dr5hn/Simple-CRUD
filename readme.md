@@ -18,7 +18,7 @@ Bootstrap – will make our UI look better.<br/>
 
 Step 1 : Create Database
 ```
-api_db (Or Whatever Name)
+api_db (or Whatever_Name)
 ```
 
 Step 2 : Import SQL file into Database
