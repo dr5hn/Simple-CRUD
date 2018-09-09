@@ -12,8 +12,8 @@ window.ReadOneProductComponent = React.createClass({
 
     componentDidMount: function() {
         var productId = this.props.productId;
-
-        this.serverRequest = $.get("http://localhost/Simple-CRUD/api/product/read_one.php?id=" + productId,
+        const hostURL = location.protocol + '//' + location.hostname + location.pathname;
+        this.serverRequest = $.get(hostURL+"api/product/read_one.php?id=" + productId,
             function(product) {
                 this.setState({category_name: product.category_name});
                 this.setState({id: product.id});

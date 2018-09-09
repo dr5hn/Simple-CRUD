@@ -13,7 +13,8 @@ window.CreateProductComponent = React.createClass({
 
     //on mount get all categories and store them in it's component state
     componentDidMount: function() {
-        this.serverRequest = $.get("http://localhost/Simple-CRUD/api/category/read.php", function(categories) {
+        const hostURL = location.protocol + '//' + location.hostname + location.pathname;
+        this.serverRequest = $.get(hostURL+"api/category/read.php", function(categories) {
             this.setState({
                 categories: categories.records
             });
@@ -56,10 +57,11 @@ window.CreateProductComponent = React.createClass({
             price : this.state.price,
             category_id : this.state.selectedCategoryId
         };
-
+        
+        const hostURL = location.protocol + '//' + location.hostname + location.pathname;
         //submit data to api
         $.ajax({
-            url: "http://localhost/Simple-CRUD/api/product/create.php",
+            url: hostURL+"api/product/create.php",
             type: "POST",
             contentType: "application/json",
             data : JSON.stringify(form_data),

@@ -13,8 +13,10 @@ window.UpdateProductComponent = React.createClass({
 
     componentDidMount: function() {
 
+        const hostURL = location.protocol + '//' + location.hostname + location.pathname;
+
         //read categories
-        this.serverRequestCat = $.get("http://localhost/Simple-CRUD/api/category/read.php",
+        this.serverRequestCat = $.get(hostURL+"api/category/read.php",
             function(categories) {
                 this.setState({
                     categories: categories.records
@@ -23,7 +25,8 @@ window.UpdateProductComponent = React.createClass({
 
         //read one product data
         var productId = this.props.productId;
-        this.serverRequestProd = $.get("http://localhost/Simple-CRUD/api/product/read_one.php?id=" + productId,
+        
+        this.serverRequestProd = $.get(hostURL+"api/product/read_one.php?id=" + productId,
             function(product) {
                 this.setState({selectedCategoryId: product.category_id});
                 this.setState({name: product.name});
@@ -70,8 +73,9 @@ window.UpdateProductComponent = React.createClass({
         };
 
         //submit form data to api
+        const hostURL = location.protocol + '//' + location.hostname + location.pathname;
         $.ajax({
-            url: 'http://localhost/Simple-CRUD/api/product/update.php',
+            url: hostURL+'api/product/update.php',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(form_data),

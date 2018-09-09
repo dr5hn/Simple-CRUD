@@ -9,7 +9,8 @@ window.ReadProductsComponent = React.createClass({
 
     //on mount fetch all products and store them as this components state
     componentDidMount: function() {
-        this.serverRequest = $.get("http://localhost/Simple-CRUD/api/product/read.php", function(products) {
+        const hostURL = location.protocol + '//' + location.hostname + location.pathname;
+        this.serverRequest = $.get(hostURL+"api/product/read.php", function(products) {
             this.setState({
                 products: products.records
             });

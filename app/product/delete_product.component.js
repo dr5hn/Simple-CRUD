@@ -6,10 +6,11 @@ window.DeleteProductComponent = React.createClass({
     onDelete: function(e) {
         //product to delete
         var productId = this.props.productId;
+        const hostURL = location.protocol + '//' + location.hostname + location.pathname;
 
         //submit data to ajax API
         $.ajax({
-            url: "http://localhost/Simple-CRUD/api/product/delete.php",
+            url: hostURL+"api/product/delete.php",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({'id':productId}),
