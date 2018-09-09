@@ -9,7 +9,7 @@ class Database
     private $host = "localhost";
     private $db_name = "api_db";
     private $username = "root";
-    private $password = "mysql";
+    private $password = "mysql"; // If you're using xampp keep it blank
     private $conn;
 
     public function getConnection() {
