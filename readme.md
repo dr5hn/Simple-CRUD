@@ -16,20 +16,33 @@ Bootstrap – will make our UI look better.<br/>
 
 ### Installation
 
-Import Database
+Step 1 : Create Database
+```
+api_db (Or Whatever Name)
+```
+
+Step 2 : Import SQL file into Database
 ```
 api_db.sql
 ```
 
-Edit Project Configuration Files
+Step 3 : Update Project Configuration Files 
 ```
-api/config/core.php
-api/config/database.php
+- api/config/core.php
+Update following variables as per your server config
+$home_url = "http://localhost/Simple-CRUD/";
+
+- api/config/database.php
+Update following variables as per your database config
+$host = "localhost";
+private $db_name = "api_db";
+private $username = "root";
+private $password = "mysql"; // If you're using xampp keep it blank
 ```
 
-Run
+Step 4 : Go Live
 ```
 http://localhost/Simple-CRUD
 ```
 
-And You're Done!!
+That's all Folks !!
