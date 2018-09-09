@@ -26,7 +26,7 @@ $product->name = $data->name;
 $product->description = $data->description;
 $product->price = $data->price;
 $product->category_id = $data->category_id;
-$product->created = date('d-m-Y H:i:s');
+$product->created = date('Y-m-d H:i:s');
 
 //lets create product now
 if($product->create()) {
